@@ -1,0 +1,1449 @@
+{% extends 'base.html' %} {% load i18n %} {% load static %} {% block content %}
+<div class="wrapper">
+  <!-- Header Starts -->
+  <header id="header" class="header">
+    <div class="header-inner">
+      <!-- Navbar Starts -->
+      <nav class="navbar navbar-expand-lg p-0" id="singlepage-nav">
+        <!-- Logo Starts -->
+        <div class="logo">
+          <a
+            data-toggle="collapse"
+            data-target=".navbar-collapse.show"
+            class="navbar-brand link-menu scroll-to-target"
+            href="#mainslider"
+          >
+            <!-- Logo White Starts -->
+            <img
+              id="logo-light"
+              class="logo-light"
+              src="{% static 'img/logo-black.png'%}"
+              alt="logo-light"
+            />
+            <!-- Logo White Ends -->
+            <!-- Logo Black Starts -->
+            <img
+              id="logo-dark"
+              class="logo-dark"
+              src="{% static 'img/logo-black.png'%}"
+              alt="logo-dark"
+            />
+            <!-- Logo Black Ends -->
+          </a>
+        </div>
+        <!-- Logo Ends -->
+        <!-- Hamburger Icon Starts -->
+        <button
+          class="navbar-toggler p-0"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span id="icon-toggler">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+        <!-- Hamburger Icon Ends -->
+        <!-- Navigation Menu Starts -->
+        <div
+          class="collapse navbar-collapse nav-menu"
+          id="navbarSupportedContent"
+        >
+          <ul class="nav-menu-inner mr-auto">
+            <li>
+              <a
+                data-toggle="collapse"
+                data-target=".navbar-collapse.show"
+                class="link-menu"
+                href="#mainslider"
+                ><i class="fa fa-home"></i> {% trans "Home" %}</a
+              >
+            </li>
+            <li>
+              <a
+                data-toggle="collapse"
+                data-target=".navbar-collapse.show"
+                class="link-menu"
+                href="#about"
+                ><i class="fa fa-user"></i> {% trans "About Us" %}
+              </a>
+            </li>
+            <li>
+              <a
+                data-toggle="collapse"
+                data-target=".navbar-collapse.show"
+                class="link-menu"
+                href="#services"
+                ><i class="fa fa-cog"></i> {% trans "Our Services" %}</a
+              >
+            </li>
+            <li>
+              <a
+                data-toggle="collapse"
+                data-target=".navbar-collapse.show"
+                class="link-menu"
+                href="#portfolio"
+                ><i class="fa fa-image"></i> {% trans "Our Work" %}</a
+              >
+            </li>
+            <li>
+              <a
+                data-toggle="collapse"
+                data-target=".navbar-collapse.show"
+                class="link-menu"
+                href="#team"
+                ><i class="fa fa-user"></i> {% trans "Our Team" %}</a
+              >
+            </li>
+            <li>
+              <a
+                data-toggle="collapse"
+                data-target=".navbar-collapse.show"
+                class="link-menu"
+                href="#blog"
+                ><i class="fa fa-comments"></i> {% trans "Blog" %}</a
+              >
+            </li>
+            <li>
+              <a
+                data-toggle="collapse"
+                data-target=".navbar-collapse.show"
+                class="link-menu"
+                href="#contact"
+                ><i class="fa fa-envelope"></i> {% trans "Contact Us" %}
+              </a>
+            </li>
+            <li>
+              <form id="language-form" method="post" action="{% url 'set_language' %}" style="display: inline;">
+                {% csrf_token %}
+                <input name="next" type="hidden" value="{{ request.path }}">
+                <select name="language" onchange="this.form.submit();" class="language-select">
+                  <option value="ar" {% if LANGUAGE_CODE == 'ar' %}selected{% endif %}>العربية</option>
+                  <option value="en" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}>English</option>
+                </select>
+              </form>
+            </li>
+          </ul>
+        </div>
+        <!-- Navigation Menu Ends -->
+      </nav>
+
+      <!-- Navbar Ends -->
+    </div>
+  </header>
+
+  <!-- Main Slider  Starts -->
+  <section class="mainslider" id="mainslider">
+    <!-- Slider Hero Starts -->
+    <div
+      class="rev_slider_wrapper fullwidthbanner-container dark-slider"
+      data-alias="vimeo-hero"
+      style="
+        margin: 0px auto;
+        background-color: transparent;
+        padding: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+      "
+    >
+      <!-- START REVOLUTION SLIDER 5.0.7 fullwidth mode -->
+      <div
+        id="rev_slider"
+        class="rev_slider fullwidthabanner"
+        style="display: none"
+        data-version="5.0.7"
+      >
+        <ul>
+          <!-- SLIDE  -->
+          <li
+            data-index="rs-18"
+            data-transition="zoomin"
+            data-slotamount="7"
+            data-easein="Power4.easeInOut"
+            data-easeout="Power4.easeInOut"
+            data-masterspeed="2000"
+            data-thumb="http://via.placeholder.com/100x50"
+            data-rotate="0"
+            data-saveperformance="off"
+            data-title="Ken Burns"
+            data-description=""
+          >
+            <!-- MAIN IMAGE -->
+            <img
+              src="{% static 'img/header/save1.jpg'%}"
+              data-bgposition="center center"
+              data-kenburns="on"
+              data-duration="30000"
+              data-ease="Linear.easeNone"
+              data-scalestart="100"
+              data-scaleend="180"
+              data-rotatestart="0"
+              data-rotateend="0"
+              data-offsetstart="0 0"
+              data-offsetend="0 0"
+              data-bgparallax="10"
+              class="rev-slidebg"
+              data-no-retina
+            />
+            <!-- LAYERS -->
+
+            <!-- LAYER NR. 1 -->
+            <div
+              class="tp-caption NotGeneric-Title tp-resizeme rs-parallaxlevel-0"
+              data-x="['center','center','center','center']"
+              data-hoffset="['0','0','0','0']"
+              data-y="['middle','middle','middle','middle']"
+              data-voffset="['0','0','0','0']"
+              data-fontsize="['70','70','70','45']"
+              data-lineheight="['70','70','70','50']"
+              data-width="none"
+              data-height="none"
+              data-whitespace="nowrap"
+              data-transform_idle="o:1;"
+              data-transform_in="x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"
+              data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+              data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+              data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+              data-start="1000"
+              data-splitout="none"
+              data-responsive_offset="on"
+              data-elementdelay="0.05"
+              style="z-index: 5; white-space: nowrap; font-weight: 600"
+            >
+              {% trans "Company Kayan Al-Shamaliya" %}
+            </div>
+
+            <!-- LAYER NR. 2 -->
+            <div
+              class="tp-caption NotGeneric-SubTitle tp-resizeme rs-parallaxlevel-0 nowrap-normal text-center px-15"
+              data-x="['center','center','center','center']"
+              data-hoffset="['0','0','0','0']"
+              data-y="['middle','middle','middle','middle']"
+              data-voffset="['70','70','70','70']"
+              data-width="none"
+              data-height="none"
+              data-whitespace="nowrap"
+              data-transform_idle="o:1;"
+              data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+              data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+              data-start="1500"
+              data-responsive_offset="on"
+              style="z-index: 6; white-space: nowrap"
+            >
+              {% trans "Security and Safety" %}
+            </div>
+
+            <!-- LAYER NR. 3 -->
+            <div
+              class="tp-caption NotGeneric-Icon tp-resizeme rs-parallaxlevel-0"
+              data-x="['center','center','center','center']"
+              data-hoffset="['0','0','0','0']"
+              data-y="['middle','middle','middle','middle']"
+              data-voffset="['-68','-68','-68','-68']"
+              data-width="none"
+              data-height="none"
+              data-whitespace="nowrap"
+              data-transform_idle="o:1;"
+              data-style_hover="cursor:default;"
+              data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
+              data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+              data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+              data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+              data-start="2000"
+              data-splitin="none"
+              data-splitout="none"
+              data-responsive_offset="on"
+              style="z-index: 7; white-space: nowrap"
+            >
+              <i class="pe-7s-refresh"></i>
+            </div>
+            <!-- LAYER NR. 4 -->
+            <div
+              class="tp-caption"
+              data-x="['center','center','center','center']"
+              data-hoffset="['0','0','0','0']"
+              data-y="['middle','middle','middle','middle']"
+              data-voffset="['150','210','210','180']"
+              data-width="none"
+              data-height="none"
+              data-whitespace="nowrap"
+              data-transform_idle="o:1;"
+              data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power1.easeInOut;"
+              data-style_hover="c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);"
+              data-transform_in="y:100px;sX:1;sY:1;opacity:0;s:2000;e:Power3.easeInOut;"
+              data-transform_out="y:50px;opacity:0;s:1000;e:Power2.easeInOut;"
+              data-start="750"
+              data-splitin="none"
+              data-splitout="none"
+              data-responsive_offset="on"
+              data-responsive="off"
+              style="
+                z-index: 11;
+                white-space: nowrap;
+                text-transform: left;
+                outline: none;
+                box-shadow: none;
+                box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                cursor: pointer;
+              "
+            >
+              <a
+                href="#about"
+                class="custom-button slider-button scroll-to-target"
+              >
+                {% trans "Read More About Us" %}</a
+              >
+            </div>
+          </li>
+          <!-- SLIDE  -->
+          <li
+            data-index="rs-2"
+            data-transition="zoomin"
+            data-slotamount="default"
+            data-easein="default"
+            data-easeout="default"
+            data-masterspeed="default"
+            data-thumb="http://via.placeholder.com/100x50"
+            data-rotate="0"
+            data-fsmasterspeed="300"
+            data-fsslotamount="7"
+            data-saveperformance="off"
+            data-title="Intro"
+            data-description=""
+          >
+            <!-- MAIN IMAGE -->
+            <img
+              src="{% static 'img/header/save2.jpg'%}"
+              data-bgposition="center center"
+              data-kenburns="on"
+              data-duration="30000"
+              data-ease="Linear.easeNone"
+              data-scalestart="100"
+              data-scaleend="180"
+              data-rotatestart="0"
+              data-rotateend="0"
+              data-offsetstart="0 0"
+              data-offsetend="0 0"
+              data-bgparallax="10"
+              class="rev-slidebg"
+              data-no-retina
+            />
+            <!-- LAYERS -->
+
+            <!-- LAYER NR. 1 -->
+            <div
+              class="tp-caption NotGeneric-Title tp-resizeme rs-parallaxlevel-0"
+              data-x="['center','center','center','center']"
+              data-hoffset="['0','0','0','0']"
+              data-y="['middle','middle','middle','middle']"
+              data-voffset="['0','0','0','0']"
+              data-fontsize="['70','70','70','45']"
+              data-lineheight="['70','70','70','50']"
+              data-width="none"
+              data-height="none"
+              data-whitespace="nowrap"
+              data-transform_idle="o:1;"
+              data-transform_in="x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"
+              data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+              data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+              data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+              data-start="1000"
+              data-splitout="none"
+              data-responsive_offset="on"
+              data-elementdelay="0.05"
+              style="z-index: 5; white-space: nowrap; font-weight: 600"
+            >
+              {% trans "Company Kayan Al-Shamaliya" %}
+            </div>
+
+            <!-- LAYER NR. 2 -->
+            <div
+              class="tp-caption NotGeneric-SubTitle tp-resizeme rs-parallaxlevel-0 nowrap-normal text-center px-15"
+              data-x="['center','center','center','center']"
+              data-hoffset="['0','0','0','0']"
+              data-y="['middle','middle','middle','middle']"
+              data-voffset="['70','70','70','70']"
+              data-width="none"
+              data-height="none"
+              data-whitespace="nowrap"
+              data-transform_idle="o:1;"
+              data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+              data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+              data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+              data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+              data-start="1500"
+              data-splitin="none"
+              data-splitout="none"
+              data-responsive_offset="on"
+              style="z-index: 6; white-space: nowrap"
+            >
+              {% trans "Security and Safety" %}
+            </div>
+
+            <!-- LAYER NR. 3 -->
+            <div
+              class="tp-caption NotGeneric-Icon tp-resizeme rs-parallaxlevel-0"
+              data-x="['center','center','center','center']"
+              data-hoffset="['0','0','0','0']"
+              data-y="['middle','middle','middle','middle']"
+              data-voffset="['-68','-68','-68','-68']"
+              data-width="none"
+              data-height="none"
+              data-whitespace="nowrap"
+              data-transform_idle="o:1;"
+              data-style_hover="cursor:default;"
+              data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
+              data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+              data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+              data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+              data-start="2000"
+              data-splitin="none"
+              data-splitout="none"
+              data-responsive_offset="on"
+              style="z-index: 7; white-space: nowrap"
+            >
+              <i class="pe-7s-refresh"></i>
+            </div>
+            <!-- LAYER NR. 4 -->
+            <div
+              class="tp-caption"
+              data-x="['center','center','center','center']"
+              data-hoffset="['0','0','0','0']"
+              data-y="['middle','middle','middle','middle']"
+              data-voffset="['150','210','210','180']"
+              data-width="none"
+              data-height="none"
+              data-whitespace="nowrap"
+              data-transform_idle="o:1;"
+              data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power1.easeInOut;"
+              data-style_hover="c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);"
+              data-transform_in="y:100px;sX:1;sY:1;opacity:0;s:2000;e:Power3.easeInOut;"
+              data-transform_out="y:50px;opacity:0;s:1000;e:Power2.easeInOut;"
+              data-start="750"
+              data-splitin="none"
+              data-splitout="none"
+              data-responsive_offset="on"
+              data-responsive="off"
+              style="
+                z-index: 11;
+                white-space: nowrap;
+                text-transform: left;
+                outline: none;
+                box-shadow: none;
+                box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                cursor: pointer;
+              "
+            >
+              <a
+                href="#about"
+                class="custom-button slider-button scroll-to-target"
+              >
+                {% trans "Read More About Us" %}</a
+              >
+            </div>
+          </li>
+          <!-- SLIDE  -->
+          <li
+            data-index="rs-3"
+            data-transition="zoomin"
+            data-slotamount="default"
+            data-easein="default"
+            data-easeout="default"
+            data-masterspeed="default"
+            data-thumb="http://via.placeholder.com/100x50"
+            data-rotate="0"
+            data-fsmasterspeed="300"
+            data-fsslotamount="7"
+            data-saveperformance="off"
+            data-title="Intro"
+            data-description=""
+          >
+            <!-- MAIN IMAGE -->
+            <img
+              src="{% static 'img/header/19.jpg'%}"
+              data-bgposition="center center"
+              data-kenburns="on"
+              data-duration="30000"
+              data-ease="Linear.easeNone"
+              data-scalestart="100"
+              data-scaleend="180"
+              data-rotatestart="0"
+              data-rotateend="0"
+              data-offsetstart="0 0"
+              data-offsetend="0 0"
+              data-bgparallax="10"
+              class="rev-slidebg"
+              data-no-retina
+            />
+            <!-- LAYERS -->
+
+            <!-- LAYER NR. 1 -->
+            <div
+              class="tp-caption NotGeneric-Title tp-resizeme rs-parallaxlevel-0"
+              data-x="['center','center','center','center']"
+              data-hoffset="['0','0','0','0']"
+              data-y="['middle','middle','middle','middle']"
+              data-voffset="['0','0','0','0']"
+              data-fontsize="['70','70','70','45']"
+              data-lineheight="['70','70','70','50']"
+              data-width="none"
+              data-height="none"
+              data-whitespace="nowrap"
+              data-transform_idle="o:1;"
+              data-transform_in="x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"
+              data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+              data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+              data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+              data-start="1000"
+              data-splitout="none"
+              data-responsive_offset="on"
+              data-elementdelay="0.05"
+              style="z-index: 5; white-space: nowrap; font-weight: 600"
+            >
+              {% trans "Company Kayan Al-Shamaliya" %}
+            </div>
+
+            <!-- LAYER NR. 2 -->
+            <div
+              class="tp-caption NotGeneric-SubTitle tp-resizeme rs-parallaxlevel-0 nowrap-normal text-center px-15"
+              data-x="['center','center','center','center']"
+              data-hoffset="['0','0','0','0']"
+              data-y="['middle','middle','middle','middle']"
+              data-voffset="['70','70','70','70']"
+              data-width="none"
+              data-height="none"
+              data-whitespace="nowrap"
+              data-transform_idle="o:1;"
+              data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+              data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+              data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+              data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+              data-start="1500"
+              data-splitin="none"
+              data-splitout="none"
+              data-responsive_offset="on"
+              style="z-index: 6; white-space: nowrap"
+            >
+              {% trans "Security and Safety" %}
+            </div>
+
+            <!-- LAYER NR. 3 -->
+            <div
+              class="tp-caption NotGeneric-Icon tp-resizeme rs-parallaxlevel-0"
+              data-x="['center','center','center','center']"
+              data-hoffset="['0','0','0','0']"
+              data-y="['middle','middle','middle','middle']"
+              data-voffset="['-68','-68','-68','-68']"
+              data-width="none"
+              data-height="none"
+              data-whitespace="nowrap"
+              data-transform_idle="o:1;"
+              data-style_hover="cursor:default;"
+              data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;"
+              data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+              data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+              data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+              data-start="2000"
+              data-splitin="none"
+              data-splitout="none"
+              data-responsive_offset="on"
+              style="z-index: 7; white-space: nowrap"
+            >
+              <i class="pe-7s-refresh"></i>
+            </div>
+            <!-- LAYER NR. 4 -->
+            <div
+              class="tp-caption"
+              data-x="['center','center','center','center']"
+              data-hoffset="['0','0','0','0']"
+              data-y="['middle','middle','middle','middle']"
+              data-voffset="['150','210','210','180']"
+              data-width="none"
+              data-height="none"
+              data-whitespace="nowrap"
+              data-transform_idle="o:1;"
+              data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power1.easeInOut;"
+              data-style_hover="c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);"
+              data-transform_in="y:100px;sX:1;sY:1;opacity:0;s:2000;e:Power3.easeInOut;"
+              data-transform_out="y:50px;opacity:0;s:1000;e:Power2.easeInOut;"
+              data-start="750"
+              data-splitin="none"
+              data-splitout="none"
+              data-responsive_offset="on"
+              data-responsive="off"
+              style="
+                z-index: 11;
+                white-space: nowrap;
+                text-transform: left;
+                outline: none;
+                box-shadow: none;
+                box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                cursor: pointer;
+              "
+            >
+              <a
+                href="#about"
+                class="custom-button slider-button scroll-to-target"
+              >
+                {% trans "Read More About Us" %}</a
+              >
+            </div>
+          </li>
+        </ul>
+        <div class="tp-static-layers"></div>
+        <div
+          class="tp-bannertimer tp-bottom"
+          style="visibility: hidden !important"
+        ></div>
+      </div>
+    </div>
+    <!-- END REVOLUTION SLIDER -->
+    <!-- Slider Hero Ends -->
+  </section>
+  <div class="whatsapp-fixed">
+    <a href="https://wa.me/+966532240777" target="_blank" rel="noopener noreferrer">
+    <div class="ctc-analytics ht_ctc_padding" style="background-color: #25D366; padding: 14px; border-radius: 50%; box-shadow: 0px 0px 11px rgba(0,0,0,.5);">
+      <svg style="pointer-events:none; display:block; height:40px; width:40px;" width="40px" height="40px" viewBox="0 0 1219.547 1225.016">
+        <path style="fill: #E0E0E0;" fill="#E0E0E0" d="M1041.858 178.02C927.206 63.289 774.753.07 612.325 0 277.617 0 5.232 272.298 5.098 606.991c-.039 106.986 27.915 211.42 81.048 303.476L0 1225.016l321.898-84.406c88.689 48.368 188.547 73.855 290.166 73.896h.258.003c334.654 0 607.08-272.346 607.222-607.023.056-162.208-63.052-314.724-177.689-429.463zm-429.533 933.963h-.197c-90.578-.048-179.402-24.366-256.878-70.339l-18.438-10.93-191.021 50.083 51-186.176-12.013-19.087c-50.525-80.336-77.198-173.175-77.16-268.504.111-278.186 226.507-504.503 504.898-504.503 134.812.056 261.519 52.604 356.814 147.965 95.289 95.36 147.728 222.128 147.688 356.948-.118 278.195-226.522 504.543-504.693 504.543z"></path>
+        <linearGradient id="htwaicona-chat" gradientUnits="userSpaceOnUse" x1="609.77" y1="1190.114" x2="609.77" y2="21.084">
+            <stop id="s3_1_offset_1" offset="0" stop-color="#25D366"></stop>
+            <stop id="s3_1_offset_2" offset="1" stop-color="#25D366"></stop>
+        </linearGradient>
+        <path style="fill: url(#htwaicona-chat);" fill="url(#htwaicona-chat)" d="M27.875 1190.114l82.211-300.18c-50.719-87.852-77.391-187.523-77.359-289.602.133-319.398 260.078-579.25 579.469-579.25 155.016.07 300.508 60.398 409.898 169.891 109.414 109.492 169.633 255.031 169.57 409.812-.133 319.406-260.094 579.281-579.445 579.281-.023 0 .016 0 0 0h-.258c-96.977-.031-192.266-24.375-276.898-70.5l-307.188 80.548z"></path>
+        <image overflow="visible" opacity=".08" width="682" height="639" transform="translate(270.984 291.372)"></image>
+        <path fill-rule="evenodd" clip-rule="evenodd" style="fill: #FFF;" fill="#FFF" d="M462.273 349.294c-11.234-24.977-23.062-25.477-33.75-25.914-8.742-.375-18.75-.352-28.742-.352-10 0-26.25 3.758-39.992 18.766-13.75 15.008-52.5 51.289-52.5 125.078 0 73.797 53.75 145.102 61.242 155.117 7.5 10 103.758 166.266 256.203 226.383 126.695 49.961 152.477 40.023 179.977 37.523s88.734-36.273 101.234-71.297c12.5-35.016 12.5-65.031 8.75-71.305-3.75-6.25-13.75-10-28.75-17.5s-88.734-43.789-102.484-48.789-23.75-7.5-33.75 7.516c-10 15-38.727 48.773-47.477 58.773-8.75 10.023-17.5 11.273-32.5 3.773-15-7.523-63.305-23.344-120.609-74.438-44.586-39.75-74.688-88.844-83.438-103.859-8.75-15-.938-23.125 6.586-30.602 6.734-6.719 15-17.508 22.5-26.266 7.484-8.758 9.984-15.008 14.984-25.008 5-10.016 2.5-18.773-1.25-26.273s-32.898-81.67-46.234-111.326z"></path>
+        <path style="fill: #FFFFFF;" fill="#FFF" d="M1036.898 176.091C923.562 62.677 772.859.185 612.297.114 281.43.114 12.172 269.286 12.039 600.137 12 705.896 39.633 809.13 92.156 900.13L7 1211.067l318.203-83.438c87.672 47.812 186.383 73.008 286.836 73.047h.255.003c330.812 0 600.109-269.219 600.25-600.055.055-160.343-62.328-311.108-175.649-424.53zm-424.601 923.242h-.195c-89.539-.047-177.344-24.086-253.93-69.531l-18.227-10.805-188.828 49.508 50.414-184.039-11.875-18.867c-49.945-79.414-76.312-171.188-76.273-265.422.109-274.992 223.906-498.711 499.102-498.711 133.266.055 258.516 52 352.719 146.266 94.195 94.266 146.031 219.578 145.992 352.852-.118 274.999-223.923 498.749-498.899 498.749z"></path>
+    </svg>   
+    </div>
+  </div>
+  <!-- Main Slider  Ends -->
+  <!-- About  Starts -->
+  <section id="about" class="about">
+    <!-- Container Starts -->
+    <div class="container">
+      <!-- Main Heading Starts -->
+      <div class="text-center top-text">
+        <h1>
+          <span>{% trans "Company" %}</span> {% trans "Kayan Al-Shamaliya" %}
+        </h1>
+        <h4>{{ sections.about.title }}</h4>
+      </div>
+      <!-- Main Heading Ends -->
+      <!-- Divider Starts -->
+      <div class="divider text-center">
+        <span class="outer-line"></span>
+        <span class="fa fa-user" aria-hidden="true"></span>
+        <span class="outer-line"></span>
+      </div>
+      <!-- Divider Ends -->
+      <!-- About Content Starts -->
+      <div class="row about-content">
+        <div class="col-sm-12 col-md-12 col-lg-6 about-left-side">
+          <h3 class="title-about">
+            {% trans "We Are" %}
+            <strong> {% trans "Company Kayan Al-Shamaliya" %}</strong>
+          </h3>
+          <hr />
+          <p>{{ sections.about.description }}<</p>
+          <!-- Tabs Heading Starts -->
+          <ul class="nav nav-tabs">
+            <li>
+              <a class="active" data-toggle="tab" href="#menu1"
+                >{{ sections.history.title }}</a
+              >
+            </li>
+            <li>
+              <a data-toggle="tab" href="#menu2"
+                >{{ sections.services.title }}</a
+              >
+            </li>
+            <li>
+              <a data-toggle="tab" href="#menu3">
+                {{ sections.why_us.title }}</a
+              >
+            </li>
+          </ul>
+          <!-- Tabs Heading Ends -->
+          <!-- Tabs Content Starts -->
+          <div class="tab-content">
+            <div id="menu1" class="tab-pane fade in active">
+              <p>{{ sections.history.description }}</p>
+            </div>
+            <div id="menu2" class="tab-pane fade">
+              <p>{{ sections.services.description }}</p>
+            </div>
+            <div id="menu3" class="tab-pane fade">
+              <p>{{ sections.why_us.description }}</p>
+            </div>
+          </div>
+          <a class="custom-button scroll-to-target" href="#portfolio"
+            >{% trans "Our Works" %}</a
+          >
+        </div>
+        <div class="col-md-12 col-lg-6 about-right">
+          <div class="about-right-side">
+            <img class="img-fluid" src="{% static 'img/team/1.jpg'%}" alt="" />
+          </div>
+        </div>
+      </div>
+      <!-- About Content Ends -->
+    </div>
+    <!-- Container Ends -->
+  </section>
+  <!-- About  Ends -->
+  <!-- Project Manager  Starts -->
+  <section class="projectmanager" id="projectmanager">
+    <!--  Overlay Starts -->
+    <div class="section-overlay">
+      <!-- Container Starts -->
+      <div class="container">
+        <div class="row">
+          <!-- Image Starts -->
+          <div class="col-md-12 col-lg-12 col-xl-6">
+            <img
+              class="img-fluid projectmanagerpicture"
+              src="{{ manager.image.url }}"
+              alt="project manager"
+            />
+          </div>
+          <!-- Image Ends -->
+          <!-- Details Starts -->
+          <div class="col-md-12 col-lg-12 col-xl-6">
+          
+            <h3>{{ manager.name }}</h3>
+            <p>{{ manager.job_description }}</p>
+          
+            <!-- Social Media Starts -->
+            <div class="social-icons">
+              <ul class="social">
+                <li>
+                  <a class="twitter" href="#" title="twitter"></a>
+                </li>
+                <li>
+                  <a class="facebook" href="#" title="facebook"></a>
+                </li>
+                <li>
+                  <a class="google" href="#" title="google"></a>
+                </li>
+                <li>
+                  <a class="skype" href="#" title="skype"></a>
+                </li>
+                <li>
+                  <a class="instagram" href="#" title="instagram"></a>
+                </li>
+                <li>
+                  <a class="linkedin" href="#" title="linkedin"></a>
+                </li>
+                <li>
+                  <a class="youtube" href="#" title="youtube"></a>
+                </li>
+              </ul>
+            </div>
+            <!-- Social Media Ends -->
+          </div>
+        </div>
+        <!-- Details Ends -->
+      </div>
+      <!-- Container Ends -->
+    </div>
+  </section>
+  <!-- Project Manager  Ends -->
+  <!-- Services  Starts -->
+  <section id="services" class="services">
+    <!-- Container Starts -->
+    <div class="container">
+      <!-- Main Heading Starts -->
+      <div class="text-center top-text">
+        <h1><span>{% trans "Top" %}</span> {% trans "Our Services" %}</h1>
+        <h4>{% trans "What We Offer Our Clients" %}</h4>
+      </div>
+      <!-- Main Heading Starts -->
+      <!-- Divider Starts -->
+      <div class="divider text-center">
+        <span class="outer-line"></span>
+        <span class="fa fa-cogs" aria-hidden="true"></span>
+        <span class="outer-line"></span>
+      </div>
+      <!-- Divider Ends -->
+      <!-- Services Starts -->
+      <div class="row services-box">
+        <!-- Service Item Starts -->
+        <div class="col-lg-4 col-md-6 col-sm-12 services-box-item">
+          <!-- Service Item Cover Starts -->
+          <span
+            class="services-box-item-cover fa fa-leaf"
+            style="background-image: url('{{ sections.fire_alarm_systems.image.url }}');"
+            data-headline="{{ sections.fire_alarm_systems.title }}"
+          >
+          </span>
+
+          <!-- Service Item Cover Ends -->
+          <!-- Service Item Content Starts -->
+          <div class="services-box-item-content fa fa-leaf">
+            <h2>{{ sections.fire_alarm_systems.title }}</h2>
+            <p>{{ sections.fire_alarm_systems.description }}</p>
+          </div>
+          <!-- Service Item Content Ends -->
+        </div>
+        <!-- Service Item Ends -->
+
+        <!-- Service Item Starts -->
+        <div class="col-lg-4 col-md-6 col-sm-12 services-box-item">
+          <!-- Service Item Cover Starts -->
+          <span
+            class="services-box-item-cover fa fa-anchor"
+            style="background-image: url('{{ sections.fire_extinguishers.image.url }}');"
+            data-headline="  🔧   {{ sections.fire_extinguishers.title }}"
+          ></span>
+          <!-- Service Item Cover Ends -->
+          <!-- Service Item Content Starts -->
+          <div class="services-box-item-content fa fa-anchor">
+            <h2>{{ sections.fire_extinguishers.title }}</h2>
+            <p>{{ sections.fire_extinguishers.description }}</p>
+          </div>
+          <!-- Service Item Content Ends -->
+        </div>
+        <!-- Service Item Ends -->
+
+        <!-- Service Item Starts -->
+        <div class="col-lg-4 col-md-6 col-sm-12 services-box-item">
+          <!-- Service Item Cover Starts -->
+          <span
+            class="services-box-item-cover fa fa-comments-o"
+            style="background-image: url('{{ sections.cctv_installation.image.url }}');"
+            data-headline="  🚚  {{ sections.cctv_installation.title }} "
+          ></span>
+          <!-- Service Item Cover Ends -->
+          <!-- Service Item Content Starts -->
+          <div class="services-box-item-content fa fa-comments-o">
+            <h2>{{ sections.cctv_installation.title }}</h2>
+            <p>{{ sections.cctv_installation.description }}</p>
+          </div>
+          <!-- Service Item Content Ends -->
+        </div>
+        <!-- Service Item Ends -->
+
+        <!-- Service Item Starts -->
+        <div class="col-lg-4 col-md-6 col-sm-12 services-box-item">
+          <!-- Service Item Cover Starts -->
+          <span
+            class="services-box-item-cover fa fa-support"
+            style="background-image: url('{{ sections.fire_suppression_systems.image.url }}');"
+            data-headline="  🌍  {{ sections.fire_suppression_systems.title }}"
+          ></span>
+          <!-- Service Item Cover Ends -->
+          <div class="services-box-item-content fa fa-support">
+            <h2>🌍 {{ sections.fire_suppression_systems.title }}</h2>
+            <p>{{ sections.fire_suppression_systems.description }}</p>
+          </div>
+        </div>
+        <!-- Service Item Ends -->
+
+        <!-- Service Item Starts -->
+        <div class="col-lg-4 col-md-6 col-sm-12 services-box-item">
+          <!-- Service Item Cover Starts -->
+          <span
+            class="services-box-item-cover fa fa-cogs"
+            style="background-image: url('{{ sections.maintenance_contracts.image.url }}');"
+            data-headline="🏢{{ sections.maintenance_contracts.title }}"
+          ></span>
+          <!-- Service Item Cover Ends -->
+          <!-- Service Item Content Starts -->
+          <div class="services-box-item-content fa fa-cogs">
+            <h2>🏢{{ sections.maintenance_contracts.title }}</h2>
+            <p>{{ sections.maintenance_contracts.description }}</p>
+          </div>
+          <!-- Service Item Content Ends -->
+        </div>
+        <!-- Service Item Ends -->
+
+        <!-- Service Item Starts -->
+        <div class="col-lg-4 col-md-6 col-sm-12 services-box-item">
+          <!-- Service Item Cover Starts -->
+          <span
+            class="services-box-item-cover fa fa-file-pdf-o"
+            style="background-image: url('{{ sections.safety_consulting.image.url }}');"
+            data-headline="{{ sections.safety_consulting.title }}"
+          ></span>
+          <!-- Service Item Cover Ends -->
+          <!-- Service Item Content Starts -->
+          <div class="services-box-item-content fa fa-file-pdf-o">
+            <h2>📍 {{ sections.safety_consulting.title }}</h2>
+            <p>{{ sections.safety_consulting.description }}</p>
+          </div>
+          <!-- Service Item Content Ends -->
+        </div>
+        <!-- Service Item Ends -->
+      </div>
+      <!-- Services Ends -->
+    </div>
+  </section>
+  <!-- Services  Ends -->
+  <!-- Testimonials  Starts -->
+  <section class="testimonials">
+    <div class="section-overlay">
+      <!-- Container Starts -->
+      <div class="container">
+        <!-- Main Heading Starts -->
+        <div class="text-center top-text">
+          <h1>{% trans "Our Vision" %}</h1>
+         
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">{% trans "Compliance with Global Standards" %}</h5>
+                <p class="card-text">{% trans "Our company provides quick and efficient installation of fire safety and protection systems." %}.</p>
+              
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">{% trans "Inspection and Audits" %}</h5>
+                <p class="card-text">{% trans "We offer regular inspections to ensure the effective performance of safety and fire protection systems."%}</p>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+        <br/>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">{% trans "Fast Installation" %}</h5>
+                <p class="card-text">{% trans "We adhere to the highest international standards in designing, installing, and maintaining fire safety systems." %}</p>
+              
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">{% trans "Reliability" %}</h5>
+                <p class="card-text">{% trans "Fast installation and regular inspections are a hallmark of reliability." %}.</p>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Container Ends -->
+    </div>
+  </section>
+  <!-- Testimonials  Ends -->
+  <!-- Portfolio  Starts -->
+  <section id="portfolio" class="portfolio">
+    <!-- Container Starts -->
+    <div class="container">
+      <!-- Main Heading Starts -->
+      <div class="text-center top-text">
+        <h1><span>{% trans "Latest" %}</span> {% trans "Our Works" %}</h1>
+        <h4>{% trans "Some samples of our work" %}</h4>
+      </div>
+      <!-- Main Heading Starts -->
+      <!-- Divider Starts -->
+      <div class="divider text-center">
+        <span class="outer-line"></span>
+        <span class="fa fa-image" aria-hidden="true"></span>
+        <span class="outer-line"></span>
+      </div>
+      <!-- Divider Ends -->
+      <!-- Filter Wrapper Starts -->
+      <nav>
+        <ul class="simplefilter nav nav-pills d-block">
+          <!-- Filter Wrapper Items Starts -->
+          <li class="active" data-filter="all">
+            <i class="fa fa-reorder"></i> {% trans "All Projects" %}
+          </li>
+          <li data-filter="1">{% trans "Images" %}</li>
+          <li data-filter="2">{% trans "Videos" %}</li>
+          <li data-filter="3">{% trans "Websites" %}</li>
+          <!-- Filter Wrapper Items Ends -->
+        </ul>
+      </nav>
+      <!-- Filter Wrapper Ends -->
+      <div>
+        <div class="filtr-container">
+          {% for work in company_works %}
+          <div
+            class="col-xs-12 col-sm-6 col-md-4 col-lg-4 filtr-item"
+            data-category="1"
+          >
+            <div class="magnific-popup-gallery">
+              <!-- Thumbnail Starts -->
+              <figure class="thumbnail thumbnail__portfolio">
+                <a
+                  class="image-wrap"
+                  href="http://via.placeholder.com/700x470"
+                  data-gal="magnific-pop-up[image]"
+                  title="نموذج صورة"
+                  ><img
+                    class="img-fluid" 
+                    src="{{ work.image.url }}"
+                    style="width: 300px; height: 200px; object-fit: cover;" 
+                    alt="Image Project" /><span class="zoom-icon"></span
+                ></a>
+              </figure>
+              <!-- Thumbnail Ends -->
+              <!-- Caption Starts -->
+              <div class="caption">
+                <h3>{{ work.service_title }}</h3>
+                <p>{{ work.service_description }}</p>
+              </div>
+              <!-- Caption Ends -->
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <!-- Container Ends -->
+  </section>
+  <!-- Portfolio  Ends -->
+  <!-- Facts  Starts -->
+  <section class="facts">
+    <div class="section-overlay">
+      <!-- Container Starts -->
+      <div class="container">
+        <!-- Main Heading Starts -->
+        <div class="text-center top-text">
+          <h1><span>{% trans "Some" %}</span> {% trans "Statistics" %}</h1>
+          <h4>{% trans "Our numbers on the web" %}</h4>
+        </div>
+        <!-- Main Heading Starts -->
+        <!-- Fact Badges Starts -->
+        <div class="fact-badges">
+          <div class="row">
+            <!-- Fact Badge Item Starts -->
+            <div class="col-md-3 col-sm-6">
+              <i class="fa fa-briefcase"></i>
+              <h2>
+                <span><strong class="badges-counter">77</strong>+</span>
+              </h2>
+              <h4>{% trans "Project" %}</h4>
+            </div>
+            <!-- Fact Badge Item Ends -->
+            <!-- Fact Badge Item Starts -->
+            <div class="col-md-3 col-sm-6">
+              <i class="fa fa-clock-o"></i>
+              <h2>
+                <span><strong class="badges-counter">80</strong>+</span>
+              </h2>
+              <h4>{% trans "Working Hour" %}</h4>
+            </div>
+            <!-- Fact Badge Item Ends -->
+            <!-- Fact Badge Item Starts -->
+            <div class="col-md-3 col-sm-6">
+              <i class="fa fa-home"></i>
+              <h2>
+                <span><strong class="badges-counter">18</strong>+</span>
+              </h2>
+              <h4>{% trans "office" %}</h4>
+            </div>
+            <!-- Fact Badge Item Ends -->
+            <!-- Fact Badge Item Starts -->
+            <div class="col-md-3 col-sm-6">
+              <i class="fa fa-user"></i>
+              <h2>
+                <span><strong class="badges-counter">67</strong>+</span>
+              </h2>
+              <h4>{% trans "Client" %}</h4>
+            </div>
+            <!-- Fact Badge Item Ends -->
+          </div>
+        </div>
+        <!-- Fact Badges Ends -->
+      </div>
+      <!-- Container Ends -->
+    </div>
+  </section>
+  <!-- facts  Ends -->
+  <!-- Team  Starts -->
+
+  <!-- Team  Ends -->
+  <!-- Newsletter  Starts -->
+   <br/> <br/> <br/>
+  <section class="newsletter">
+    <div class="section-overlay">
+      <!-- Container Starts -->
+      <div class="container">
+        <!-- Main Heading Starts -->
+        <div class="text-center top-text">
+          <h1><span>{% trans "letter" %}</span> {% trans "News" %}</h1>
+          <h4>{% trans "Get to know us more" %}</h4>
+        </div>
+        <!-- Main Heading Ends -->
+        <div class="newsletter-content">
+          <p class="text-center">
+            {% trans "Sign up here to receive emails" %}<br />
+            {% trans "about offers and special prices along with the latest news directly to your inbox" %}
+          </p>
+          <!-- Newsletter Form Starts -->
+          <form
+            class="form-inputs"
+            dir="{% if LANGUAGE_CODE == 'ar' %}rtl{% else %}ltr{% endif %}"
+          >
+            <!-- Newsletter Form Input Field Starts -->
+            <div
+              class="col-md-12 form-group custom-form-group p-0"
+              dir="{% if LANGUAGE_CODE == 'ar' %}rtl{% else %}ltr{% endif %}"
+            >
+              <span class="input custom-input">
+                <input
+                  placeholder="{% trans 'Enter your email address' %}"
+                  class="input-field custom-input-field"
+                  type="text"
+                />
+                <label class="input-label custom-input-label">
+                  <i class="fa fa-envelope-open-o icon icon-field"></i>
+                </label>
+              </span>
+            </div>
+            <!-- Newsletter Form Input Field Ends -->
+            <!-- Newsletter Form Submit Button Starts -->
+            <button
+              id="submit"
+              name="submit"
+              type="submit"
+              class="custom-button"
+              title="Send"
+            >
+              {% trans 'Share US' %}
+            </button>
+            <!-- Newsletter Form Submit Button Ends -->
+          </form>
+          <!-- Newsletter Form Ends -->
+        </div>
+      </div>
+      <!-- Container Ends -->
+    </div>
+  </section>
+  <!-- Newsletter  Ends -->
+  <!-- Blog  Starts -->
+  <section class="blog" id="blog">
+    <!-- Container Starts -->
+    <div class="container">
+      <!-- Main Heading Starts -->
+      <div class="text-center top-text">
+        <h1><span> {% trans 'Blog' %}</span> {% trans 'Company Kayan' %}</h1>
+        <h4>{% trans 'Lastest Blog' %}</h4>
+      </div>
+      <!-- Main Heading Starts -->
+      <!-- Divider Starts -->
+      <div class="divider text-center">
+        <span class="outer-line"></span>
+        <span class="fa fa-comments" aria-hidden="true"></span>
+        <span class="outer-line"></span>
+      </div>
+      <!-- Divider Ends -->
+      <div class="row latest-posts-content">
+        <!-- Article Starts -->
+        {% for blog in blogs %}
+        <div class="col-sm-12 col-md-4 col-xs-12">
+          <div class="latest-post">
+            <!-- Featured Image Starts -->
+            <a class="img-thumb" href="blog-post.html"
+              ><img class="img-fluid" src="{{ blog.image.url }}" alt="img"
+            /></a>
+            <!-- Featured Image Ends -->
+            <!-- Article Content Starts -->
+            <div class="post-body">
+              <h4 class="post-title">
+                <a href="blog-post.html"> {{ blog.title }} </a>
+              </h4>
+              <div class="post-text">
+                <p>{{ blog.content }}</p>
+              </div>
+            </div>
+            <!-- Post Date Starts -->
+            <div class="post-date">
+              <span>{{ blog.published_at|date:"d" }}</span>
+              <span>{{ blog.published_at|date:"M" }}</span>
+            </div>
+            <!-- Post Date Ends -->
+            <!-- Article Content Ends -->
+          </div>
+        </div>
+        {%endfor%}
+        <!-- Article Ends -->
+
+        <!-- Article Ends -->
+        <div class="mx-auto">
+          <a class="custom-button link-blog" href="blog-rtl.html"
+            >{% trans 'Lastest Blog' %}</a
+          >
+        </div>
+      </div>
+      <!-- Latest Blog Posts Ends -->
+    </div>
+  </section>
+  <!-- Blog  Ends -->
+  <!-- Video  Starts -->
+  <section class="videopromotion">
+    <div class="section-overlay">
+      <!-- Container Starts -->
+      <div class="container">
+        <!-- Main Heading Starts -->
+        <div class="text-center top-text">
+          <h1>
+            <span> {% trans 'Video' %}</span> {% trans 'Promotional Blog' %}
+          </h1>
+          <h4>{% trans 'Designed especially for our clients' %}</h4>
+        </div>
+        <!-- Main Heading Ends -->
+        <div class="video-content">
+          <p class="text-center">
+            {% trans 'We provide our clients with excellent features and great prices'%}<br />
+            {% trans 'Dont hesitate to watch the video'%}
+          </p>
+          <!-- Video Play Starts -->
+          <div class="magnific-popup-gallery">
+            <div class="btn-wrapper text-center">
+              <a
+                class="image-wrap mfp-youtube"
+                href="https://www.youtube.com/watch?v=cDRv67IIc50"
+              ></a>
+            </div>
+          </div>
+          <!-- Video Play Ends -->
+        </div>
+      </div>
+      <!-- Container Ends -->
+    </div>
+  </section>
+  <!-- Video  Ends -->
+  <!-- Contact  Starts -->
+  <section id="contact" class="contact">
+    <!-- Container Starts -->
+    <div class="container">
+      <!-- Main Heading Starts -->
+      <div class="text-center top-text">
+        <h1><span> {% trans 'Contact'%}</span> {% trans 'Us'%}</h1>
+        <h4>{% trans 'We are at your service' %}</h4>
+      </div>
+      <!-- Main Heading Starts -->
+      <!-- Divider Starts -->
+      <div class="divider text-center">
+        <span class="outer-line"></span>
+        <span class="fa fa-envelope" aria-hidden="true"></span>
+        <span class="outer-line"></span>
+      </div>
+      <!-- Divider Ends -->
+    </div>
+    <!-- Container Ends -->
+    <!-- Map  Starts -->
+    <div class="info-map">
+      <div class="google-map">
+        <div class="gmap_container">
+          <div id="gmap_canvas"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Info Map Boxes Starts -->
+    <div class="container">
+      <div class="row info-map-boxes">
+        <!-- Left Info Map Box Starts -->
+        <div class="col-md-6 col-sm-12">
+          <div class="info-map-boxes-item fa fa-clock-o">
+            <h1>{% trans "Working Hours" %}</h1>
+            <p>
+              {% trans 'Saturday - Thursday' %} : 09:00 - 21:00 <br />
+              <br />
+              {% trans 'Friday - Closed' %}
+            </p>
+          </div>
+        </div>
+        <!-- Left Info Map Box Ends -->
+        <!-- Right Info Map Box Starts -->
+        <div class="col-md-6 col-sm-12">
+          <div class="info-map-boxes-item fa fa-phone">
+            <h1>{% trans 'Phone' %} &amp; {% trans 'Fax' %}</h1>
+            <br /><br />
+            <a
+              href="https://wa.me/9660545469152"
+              target="_blank"
+              style="
+                background-color: #25d366;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 8px;
+                text-decoration: none;
+                font-weight: bold;
+              "
+            >
+              📞 {% trans "Contact via WhatsApp" %}
+            </a>
+            <p>
+              {% trans "Phone" %} 0545469152 <br />{% trans "Fax" %} 0545469152
+              <br /><a href="#"></a>
+            </p>
+          </div>
+        </div>
+        <!-- Right Info Map Box Ends -->
+      </div>
+    </div>
+    <!-- Info Map Boxes Ends -->
+  </section>
+  <!-- Contact  Ends -->
+  <!-- Contact Form  Starts -->
+  <section class="contactform">
+    <div class="section-overlay">
+      <div class="container">
+        <!-- Main Heading Starts -->
+        <div class="text-center top-text">
+          <h1>
+            <span> {% trans "Contact us via" %}</span> {% trans "Email" %}
+          </h1>
+          <h4>{% trans "We will respond as soon as possible" %}</h4>
+        </div>
+        <!-- Main Heading Ends -->
+        <div class="form-container">
+          <!-- Contact Form Starts -->
+          <form class="formcontact" method="post" action="php/process-form.php">
+            <div class="row form-inputs">
+              <!-- First Name Field Starts -->
+              <div class="col-md-6 form-group custom-form-group">
+                <span class="input custom-input">
+                  <input
+                    placeholder="{% trans 'First Name' %}"
+                    class="input-field custom-input-field"
+                    id="firstname"
+                    name="firstname"
+                    type="text"
+                    required
+                    data-error="NEW ERROR MESSAGE"
+                  />
+                  <label class="input-label custom-input-label">
+                    <i class="fa fa-user icon icon-field"></i>
+                  </label>
+                </span>
+              </div>
+              <!-- First Name Field Ends -->
+              <!-- Last Name Field Starts -->
+              <div class="col-md-6 form-group custom-form-group">
+                <span class="input custom-input">
+                  <input
+                    placeholder="{% trans 'Last Name' %}"
+                    class="input-field custom-input-field"
+                    id="lastname"
+                    name="lastname"
+                    type="text"
+                    required
+                  />
+                  <label class="input-label custom-input-label">
+                    <i class="fa fa-user-o icon icon-field"></i>
+                  </label>
+                </span>
+              </div>
+              <!-- Last Name Field Ends -->
+              <!-- Message Field Starts -->
+              <div class="form-group custom-form-group col-md-12">
+                <textarea
+                  placeholder="{% trans 'Message' %}"
+                  id="message"
+                  name="message"
+                  cols="45"
+                  rows="7"
+                  required
+                ></textarea>
+              </div>
+              <!-- Message Field Ends -->
+              <!-- Email Name Field Starts -->
+              <div class="col-md-6 form-group custom-form-group">
+                <span class="input custom-input">
+                  <input
+                    placeholder="{% trans 'Email Address' %}"
+                    class="input-field custom-input-field"
+                    id="email"
+                    name="email"
+                    type="text"
+                    required
+                  />
+                  <label class="input-label custom-input-label">
+                    <i class="fa fa-envelope icon icon-field"></i>
+                  </label>
+                </span>
+              </div>
+              <!-- Email Name Field Ends -->
+              <!-- Submit Button Starts -->
+              <div class="col-md-6 submit-form">
+                <button
+                  id="form-submit"
+                  name="submit"
+                  type="submit"
+                  class="custom-button"
+                  title="{% trans 'Send' %}"
+                >
+                  {% trans 'Send' %}
+                </button>
+              </div>
+              <!-- Submit Button Ends -->
+              <!-- Form Submit Message Starts -->
+              <div class="col-sm-12 text-center output_message_holder d-none">
+                <p class="output_message"></p>
+              </div>
+              <!-- Form Submit Message Ends -->
+            </div>
+          </form>
+          <!-- Contact Form Ends -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Form  Ends -->
+  <!-- Logos  Starts -->
+  <section class="logos">
+    <div class="container">
+      <ul class="bxslider" id="bxslider">
+        <!-- Logos Items Starts -->
+        <li>
+          <img src="{% static 'img/sections/23.jpg'%}" alt="" width="100Px" />
+        </li>
+        <li>
+          <img src="{% static 'img/sections/24.jpg'%}" alt="" width="100Px" />
+        </li>
+        <li>
+          <img src="{% static 'img/sections/25.jpg'%}" alt="" width="100Px" />
+        </li>
+        <li>
+          <img src="{% static 'img/sections/26.jpg'%}" alt="" width="100Px" />
+        </li>
+        <li>
+          <img src="{% static 'img/sections/23.jpg'%}" alt="" width="100Px" />
+        </li>
+        <li>
+          <img src="{% static 'img/sections/24.jpg'%}" alt="" width="100Px" />
+        </li>
+        <li>
+          <img src="{% static 'img/sections/25.jpg'%}" alt="" width="100Px" />
+        </li>
+        <li>
+          <img src="{% static 'img/sections/26.jpg'%}" alt="" width="100Px" />
+        </li>
+        <!-- Logos Items Ends -->
+      </ul>
+    </div>
+  </section>
+  <!-- Logos  Ends -->
+  <!-- Footer  Starts -->
+
+  <!-- Back To Top Ends -->
+</div>
+
+{% endblock %}
