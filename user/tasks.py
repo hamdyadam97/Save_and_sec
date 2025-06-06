@@ -6,7 +6,7 @@ from django.conf import settings
 from .models import CompanyLicense, Employee 
 from django.core.mail import send_mail, EmailMultiAlternatives
 from django.template.loader import render_to_string
-from twilio.rest import Client
+
 
 
 
