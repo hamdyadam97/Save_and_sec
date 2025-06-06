@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-wni-=_0(@1-z6_r60usp_t!&q&#s=@i#mr=f&rc6vc)y(@gxmb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 #DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'user'
+    'user',
+    'django_celery_beat',
 ]
 
 MIDDLEWARE = [
@@ -134,7 +135,17 @@ STATICFILES_DIRS = [
 
 
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'  # للمودي الإنتاج
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # أو حسب المزود
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'muhammadsaad199719@gmail.com'
+EMAIL_HOST_PASSWORD = 'ttls gzsv myzm isje'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+DEFAULT_FROM_EMAIL = 'muhammadsaad199719@gmail.com'
+
+STATICFILES_DIRS = [BASE_DIR / "static"]
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
@@ -150,3 +161,16 @@ LOCALE_PATHS = [BASE_DIR / 'locale']
 
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+
+
+# إعدادات Celery
+CELERY_BROKER_URL = 'redis://localhost:6379/0'  # broker اللي celery بيستخدمه
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers.DatabaseScheduler'  # عشان django-celery-beat يشتغل
+
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+

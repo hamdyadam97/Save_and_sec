@@ -1,8 +1,12 @@
 from django.core.exceptions import ValidationError
 from django.db import models
-
+import datetime
 # Create your models here.
 
+
+
+ 
+        
 
 class Section(models.Model):
     key = models.CharField(max_length=50, unique=True, verbose_name="المفتاح (مثلاً about, services)")
@@ -43,7 +47,6 @@ class Job(models.Model):
 
 
 
-# جدول الموظف
 class Employee(models.Model):
     name_en = models.CharField(max_length=255)
     name_ar = models.CharField(max_length=255)
@@ -52,6 +55,7 @@ class Employee(models.Model):
     img = models.ImageField(upload_to='emp',blank=True, null=True)
     job = models.ForeignKey('Job', on_delete=models.SET_NULL, null=True)
     date_joined = models.DateField(auto_now_add=True)
+    residency_end_date = models.DateField(default=datetime.date(2025, 12, 31))
 
     def clean(self):
         if self.job and self.job.level == 'Manager':
@@ -102,3 +106,42 @@ class Blog(models.Model):
 
     def __str__(self):
         return self.title_en  # عرض العنوان بالإنجليزية في الـ admin panel
+
+
+
+from django.utils.translation import gettext_lazy as _
+
+
+
+
+
+class CompanyLicense(models.Model):
+    name_ar = models.CharField(max_length=255, verbose_name=_("اسم السجل بالعربي"))
+    name_en = models.CharField(max_length=255, verbose_name=_("اسم السجل بالإنجليزي"))
+    start_date = models.DateField(verbose_name=_("بداية السجل"),null=True )
+    end_date = models.DateField(verbose_name=_("نهاية السجل"),null=True)
+    file = models.FileField(upload_to='licenses/', null=True, blank=True, verbose_name=_("الملف"))
+    unified_number = models.CharField(max_length=100, unique=True, verbose_name=_("رقم الموحد للسجل"))
+    license_number = models.CharField(max_length=100, verbose_name=_("رقم السجل"))
+    is_active = models.BooleanField(default=True, verbose_name=_("هل مسموع"))
+    is_deleted = models.BooleanField(default=False, verbose_name=_("سوفت دليت"))
+
+    renewed_from = models.ForeignKey(
+        'self',
+        null=True, blank=True,
+        on_delete=models.SET_NULL,
+        related_name='renewals',
+        verbose_name=_("تم تجديده من")
+    )
+
+    def soft_delete(self):
+        self.is_deleted = True
+        self.save()
+
+    def __str__(self):
+        # ممكن تعرض الاسم بالعربي لو متوفر، وإلا بالإنجليزي
+        return self.name_ar or self.name_en
+
+    class Meta:
+        verbose_name = _("السجل التجاري")
+        verbose_name_plural = _("السجلات التجارية")

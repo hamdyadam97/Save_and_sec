@@ -1,5 +1,5 @@
 from django.contrib import admin
-from user.models import Section, Employee, Job, CompanyWork, Blog
+from user.models import Section, Employee, Job, CompanyWork, Blog,CompanyLicense
 
 
 # Register your models here.
@@ -15,3 +15,4 @@ admin.site.register(Job)
 
 admin.site.register(CompanyWork)
 admin.site.register(Blog)
+admin.site.register(CompanyLicense)
