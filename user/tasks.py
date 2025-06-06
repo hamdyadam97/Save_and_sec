@@ -11,10 +11,6 @@ from twilio.rest import Client
 
 
 
-from_whatsapp_number = '' 
-account_sid = ''
-auth_token = ''
-client = Client(account_sid, auth_token)
 
 ##@shared_task
 ##def send_periodic_whatsapp():
