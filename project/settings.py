@@ -140,7 +140,7 @@ EMAIL_HOST = 'smtp.gmail.com'  # أو حسب المزود
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'muhammadsaad199719@gmail.com'
-EMAIL_HOST_PASSWORD = 'ttls gzsv myzm isje'
+
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 DEFAULT_FROM_EMAIL = 'muhammadsaad199719@gmail.com'
 

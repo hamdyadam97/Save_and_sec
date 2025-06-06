@@ -11,9 +11,9 @@ from twilio.rest import Client
 
 
 
-from_whatsapp_number = 'whatsapp:+14155238886' 
-account_sid = 'ACf2d1186b4a791108412fe6f7dfba7db9'
-auth_token = 'e662451cf8d7ca7c4bf7031c267e2d37'
+from_whatsapp_number = '' 
+account_sid = ''
+auth_token = ''
 client = Client(account_sid, auth_token)
 
 ##@shared_task
